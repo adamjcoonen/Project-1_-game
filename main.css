@@ -1,0 +1,47 @@
+
+
+body {
+    color: white;
+    font-size: 20px;
+    text-shadow:
+        0.07em 0 black,
+        0 0.07em black,
+        -0.07em 0 black,
+        0 -0.07em black;
+    font-family: sans-serif;
+    font-style: oblique;
+    text-align: center;
+    background-image: url(https://images.pexels.com/photos/413195/pexels-photo-413195.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+h1 {
+    font-size: 50px;
+}
+h2 {
+    font-size: 40px;
+}
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;  
+    margin: 0 auto;
+    padding: 0px 100px 0px 100px;
+}
+.hole {
+border: 2px dotted black;
+border-radius: 50%;
+  text-align: center;
+  outline: black;
+  height: 150px;
+  border-width: 5px;
+      }
+
+#scoring {
+    display: inline-flex;
+}
+#mole {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+;
+}
