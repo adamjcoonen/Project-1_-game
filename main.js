@@ -1,9 +1,9 @@
 
 /*--------- constants ------ */
 
-const hole = []
-const gameTime = 60;
-
+const hole = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+const gameTime = 30;
+const molePic = '<img class="mole" src="https://media.istockphoto.com/vectors/cartoon-cute-mole-vector-id586064082">'
 
 
 /* --------- apps state variables ---------*/
@@ -27,26 +27,29 @@ const scoreELs = {
 }
 
 
-const mole = document.getElementById('#mole')
-const mHole = document.querySelectorAll('.hole')
-let clock = document.querySelector('timer')
+const moleEl = document.querySelector('.mole')
+let holeEl = document.querySelectorAll('.hole')
+let clockEl = document.getElementById('timer')
 
 /* -------- event listeners ---------*/
 
-document.getElementById('mole').onclick = moleHit;
-document.querySelector('button').addEventListener('click', gTime);
+// document.getElementById('#mole').onclick = moleHit;
+document.querySelector('button').addEventListener('click', init);
 
 
 
 
 /* ---------- Functions --------------*/
+ function init(){
 
-    function gTime(){
+// This function starts the clock and sets the 'time started to true' as 
+// a condition for the other fucntions to run
+    function startTime(){
         if( timestarted === false){
         timestarted = true;
         counter = setInterval(function(){
-            if(seconds <= gameTime){
-                document.getElementById('timer').innerHTML = seconds;
+            if(seconds >= 0){
+                clockEl.innerHTML = seconds;
                 seconds--;
             }else{
             clearInterval(counter);
@@ -54,18 +57,40 @@ document.querySelector('button').addEventListener('click', gTime);
             seconds = 0
             }
             },1000)
-        }   
+        }  render(); 
     }
+    
+    startTime();
+    
 
-function moleHit(){
 
-};
 
+ // get a random time for the moles to apprear
+ function mTime(min,max){
+    return Math.round(Math.random() * (max - min) + min);
+ };
+
+ }
+
+// get random holes for the moles to show up in. 
+//  function randHoles(hole){
+//      const index   = Math.floor(Math.random() * hole.length)
+//      return hole = holeEl[index]
+//  }
+
+
+//This function adds the number of moles clicked by the player to thier score
+//  function moleHit(){
+//     }
+//     render();
+
+
+
+
+ ///this section renders the randomly placed images to the DOM
 function render(){
-
+    if (timestarted){
+        holeEl[2].innerHTML = molePic 
+        }
 }
-
-// let myGreeting = setTimeout(function sayHi() {
-//     alert('Hello, Mr. Universe!');
-//   }, 2000)
 console.log('hello world')
