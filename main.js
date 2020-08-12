@@ -1,7 +1,7 @@
 
 /*--------- constants ------ */
 
-const hole = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+const holes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 const gameTime = 30;
 const molePic = '<img class="mole" src="https://media.istockphoto.com/vectors/cartoon-cute-mole-vector-id586064082">'
 
@@ -57,14 +57,13 @@ document.querySelector('button').addEventListener('click', init);
             seconds = 0
             }
             },1000)
-        }  render(); 
+        }    
     }
     
     startTime();
     
-
-
-
+    mRender(); 
+   
  // get a random time for the moles to apprear
  function mTime(min,max){
     return Math.round(Math.random() * (max - min) + min);
@@ -73,10 +72,11 @@ document.querySelector('button').addEventListener('click', init);
  }
 
 // get random holes for the moles to show up in. 
-//  function randHoles(hole){
-//      const index   = Math.floor(Math.random() * hole.length)
-//      return hole = holeEl[index]
-//  }
+ function randHoles(holeEl){
+     const index   = Math.floor(Math.random() * holeEl.length)
+     hole = holeEl[index]
+     return hole
+ }
 
 
 //This function adds the number of moles clicked by the player to thier score
@@ -86,11 +86,18 @@ document.querySelector('button').addEventListener('click', init);
 
 
 
-
  ///this section renders the randomly placed images to the DOM
-function render(){
-    if (timestarted){
-        holeEl[2].innerHTML = molePic 
+function mRender(cb){
+    if (timestarted === true){
+       const hole = randHoles(holeEl)
+        hole.innerHTML = molePic 
+      
+
         }
-}
+        setTimeout(cb,1000)}
+    function nextMrender(){
+        mRender(nextMrender)
+    }
+    nextMrender();
+
 console.log('hello world')
