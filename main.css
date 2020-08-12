@@ -14,6 +14,7 @@ body {
     background-image: url(https://images.pexels.com/photos/413195/pexels-photo-413195.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
     background-size: cover;
     background-repeat: no-repeat;
+    padding: 0px 100px 0px 100px;
 }
 h1 {
     font-size: 50px;
@@ -24,8 +25,11 @@ h2 {
 #container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;  
-    margin: 0 auto;
-    padding: 0px 100px 0px 100px;
+    margin: 5 auto;
+    padding: 0px 0px 0px 0px;
+    border: 10px black;
+    border-width: 5px;
+    border-style: solid;
 }
 .hole {
 border: 2px dotted black;
@@ -34,7 +38,8 @@ border-radius: 50%;
   outline: black;
   height: 150px;
   border-width: 5px;
-      }
+
+}
 
 #scoring {
     display: inline-flex;
