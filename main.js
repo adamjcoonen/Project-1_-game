@@ -26,8 +26,7 @@ const scoreELs = {
     mEsc: document.querySelector('#moles_esc')
 }
 
-
-let moleEl = document.querySelectorAll('.mole')
+let moleEl = document.querySelector('.mole')
 let holeEl = document.querySelectorAll('.hole')
 let clockEl = document.getElementById('timer')
 
@@ -35,8 +34,7 @@ let clockEl = document.getElementById('timer')
 
 
 document.querySelector('button').addEventListener('click', init);
-
-
+// holeEl.addEventListener('click',moleHit)
 
 /* ---------- Functions --------------*/
  function init(){
@@ -58,12 +56,12 @@ document.querySelector('button').addEventListener('click', init);
             },1000)
         }    
     }
-    
+    nextMrender();
     startTime();
 
     
     mRender(); 
-   
+    
  // get a random time for the moles to apprear
  
 
@@ -81,28 +79,26 @@ document.querySelector('button').addEventListener('click', init);
  }
 
 
-//This function adds the number of moles clicked by the player to thier score
- function moleHit(){
-     event.target.innerHTML = "";
-     scoreELs.mHits++;
-     scoreELs.mAppear++;
-    }
-    
-
+// This function adds the number of moles clicked by the player to thier score
+function moleHit(e){
+   
+}
+   
+// moleHit();
 
 
  ///this section renders the randomly placed images to the DOM
 function mRender(cb){
     if (timestarted === true){
        const hole = randHoles(holeEl)
-        hole.innerHTML = molePic 
-        
+       hole.innerHTML = molePic 
         }
-        setTimeout(cb, mTime(500,2000))}
+        
+        setTimeout(cb, mTime(500,1000))}
     function nextMrender(){
         mRender(nextMrender)  
     }
-    nextMrender();
-
+    
+    
 
 console.log('hello world')
