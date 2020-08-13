@@ -10,7 +10,7 @@ const molePic = '<img class="mole" src="https://media.istockphoto.com/vectors/ca
 
 
 let playerScore, molesHit, molesAppeared, molesEsc, plyHitPercent, timestarted = false, counter;
-let seconds = 60
+let seconds = 30
 //These are the numbers that will render on the DOM showing the overa;;
 //success of the player.
 
@@ -27,15 +27,14 @@ const scoreELs = {
 }
 
 
-const moleEl = document.querySelector('.mole')
+let moleEl = document.querySelectorAll('.mole')
 let holeEl = document.querySelectorAll('.hole')
 let clockEl = document.getElementById('timer')
 
 /* -------- event listeners ---------*/
 
-// document.getElementById('#mole').onclick = moleHit;
-document.querySelector('button').addEventListener('click', init);
 
+document.querySelector('button').addEventListener('click', init);
 
 
 
@@ -61,16 +60,19 @@ document.querySelector('button').addEventListener('click', init);
     }
     
     startTime();
+
     
     mRender(); 
    
  // get a random time for the moles to apprear
- function mTime(min,max){
-    return Math.round(Math.random() * (max - min) + min);
- };
+ 
 
  }
 
+
+ function mTime(min,max){
+    return Math.round(Math.random() * (max - min) + min);
+ }
 // get random holes for the moles to show up in. 
  function randHoles(holeEl){
      const index   = Math.floor(Math.random() * holeEl.length)
@@ -80,9 +82,12 @@ document.querySelector('button').addEventListener('click', init);
 
 
 //This function adds the number of moles clicked by the player to thier score
-//  function moleHit(){
-//     }
-//     render();
+ function moleHit(){
+     event.target.innerHTML = "";
+     scoreELs.mHits++;
+     scoreELs.mAppear++;
+    }
+    
 
 
 
@@ -91,13 +96,13 @@ function mRender(cb){
     if (timestarted === true){
        const hole = randHoles(holeEl)
         hole.innerHTML = molePic 
-      
-
+        
         }
-        setTimeout(cb,1000)}
+        setTimeout(cb, mTime(500,2000))}
     function nextMrender(){
-        mRender(nextMrender)
+        mRender(nextMrender)  
     }
     nextMrender();
+
 
 console.log('hello world')
