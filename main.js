@@ -32,13 +32,14 @@ let clockEl = document.getElementById('timer')
 
 /* -------- event listeners ---------*/
 
+document.getElementById("container").style.cursor = "crosshair";
+document.querySelector('button').addEventListener('click',startTime );
 
-document.querySelector('button').addEventListener('click', init);
 // holeEl.addEventListener('click',moleHit)
 
 /* ---------- Functions --------------*/
  function init(){
-
+ }
 // This function starts the clock and sets the 'time started to true' as 
 // a condition for the other fucntions to run
     function startTime(){
@@ -52,20 +53,18 @@ document.querySelector('button').addEventListener('click', init);
             clearInterval(counter);
             timestarted = false;
             seconds = 0
+            init
             }
             },1000)
-        }    
+        }  
     }
-    nextMrender();
-    startTime();
-
-    
-    mRender(); 
+  
+  
+    nextMrender(); 
     
  // get a random time for the moles to apprear
  
-
- }
+ 
 
 
  function mTime(min,max){
@@ -80,11 +79,8 @@ document.querySelector('button').addEventListener('click', init);
 
 
 // This function adds the number of moles clicked by the player to thier score
-function moleHit(e){
-   
-}
-   
-// moleHit();
+
+
 
 
  ///this section renders the randomly placed images to the DOM
@@ -98,7 +94,4 @@ function mRender(cb){
     function nextMrender(){
         mRender(nextMrender)  
     }
-    
-    
-
 console.log('hello world')
