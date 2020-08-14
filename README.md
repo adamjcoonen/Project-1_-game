@@ -1,15 +1,27 @@
 # Project-1_-game
 
 
-#Adam's Crazy Wack-Mole
+# Adam's Crazy Wack-Mole
 
 
 
-## Technologies Used
-This game utilizes HTML, CSS and Javascript
+### Technologies Used
+This game utilizes 
+- HTML 
+- CSS  
+- Javascript
 
-<screen shot>
-## Getting Started
+![alt text](image.jpg)
+
+
+## **Getting Started**
+
+-   Go to the link Below.
+-   Click "start wacking".
+-   Click on the moles as they pop up and see how mnay you get!
+-   Click the "reset' button to try again.
+
+
 [Link](https://adamjcoonen.github.io/Project-1_-game/)
 
 

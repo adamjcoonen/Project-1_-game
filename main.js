@@ -62,7 +62,7 @@ function init(){
                 seconds--;
             }else{
             timestarted = false;
-            clearInterval();
+            clearInterval(counter);
             showScore()
             }
             },1000)
