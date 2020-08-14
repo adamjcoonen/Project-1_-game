@@ -11,7 +11,7 @@ This game utilizes
 - CSS  
 - Javascript
 
-![alt text](image.jpg)
+![alt text](https://i.imgur.com/qmSKZBz.jpg)
 
 
 ## **Getting Started**
