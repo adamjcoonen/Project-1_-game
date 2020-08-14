@@ -62,6 +62,7 @@ function init(){
                 seconds--;
             }else{
             timestarted = false;
+            clearInterval();
             showScore()
             }
             },1000)
@@ -92,9 +93,10 @@ function moleHit(evt){
     }
 // renders the final score for the player
 function showScore(){
-    mHits.innerHTML = `You got ${hits} moles`
-    mAppear.innerHTML = `Out of ${appears}`
-    mEsc.innerHTML = `but ${appears-hits} moles escaped!`
+    winMsg.style.display = 'block'  
+    mHits.innerHTML = `You got ${hits} moles  `
+    mAppear.innerHTML = `Out of ${appears}  `
+    mEsc.innerHTML = `but ${appears-hits} moles escaped! `
 }
 
 
@@ -115,7 +117,7 @@ function mRender(cb){
             full.style.backgroundImage = null;   
         }
             
-             setTimeout(cb, 500)
+             setTimeout(cb, 100)
          }
     
     
