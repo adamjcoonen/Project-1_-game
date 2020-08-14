@@ -38,6 +38,8 @@ border-radius: 50%;
   outline: black;
   height: 150px;
   border-width: 5px;
+  background-position: center;
+  background-size: cover;
 
 }
 
@@ -48,5 +50,6 @@ border-radius: 50%;
     height: 100%;
     width: 100%;
     border-radius: 50%;
+    background-position: center;
 ;
 }
